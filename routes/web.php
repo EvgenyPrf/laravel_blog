@@ -21,6 +21,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', [\App\Http\Controllers\Admin\Main\IndexController::class, '__invoke']);
     });
+    Route::group(['namespace' => 'Category', 'prefix'=>'categories'], function () {
+        Route::get('/', [\App\Http\Controllers\Admin\Category\IndexController::class, '__invoke']);
+    });
 });
 
 Auth::routes();
