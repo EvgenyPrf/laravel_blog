@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Adding category</h1>
+                    <h1 class="m-0">Adding tag</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -20,11 +20,11 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-12 mb-3">
-                    <form action="{{route('admin.categories.update', $category->id)}}" class="w-25" method="POST">
+                    <form action="{{route('admin.tags.update', $tag->id)}}" class="w-25" method="POST">
                         @method('PATCH')
                         @csrf
                         <label>Title</label>
-                        <input type="text" class="form-control mb-3" name="title" placeholder="title category" value="{{old('title') ?? $category->title}}">
+                        <input type="text" class="form-control mb-3" name="title" placeholder="title tag " value="{{old('title') ?? $tag->title}}">
                         @error('title')
                         <div class="text-danger mb-3">{{ $message }}</div>
                         @enderror

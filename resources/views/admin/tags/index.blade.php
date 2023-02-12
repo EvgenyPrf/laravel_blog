@@ -20,13 +20,13 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-1 mb-3">
-                    <a href="{{route('admin.categories.create')}}" class="btn btn-outline-primary">Add category</a>
+                    <a href="{{route('admin.tags.create')}}" class="btn btn-outline-primary">Add tag</a>
                 </div>
             </div>
             <div class="row">
                 <div class="card ml-2 w-50">
                     <div class="card-header">
-                        <h3 class="card-title">Categories</h3>
+                        <h3 class="card-title">Tags</h3>
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
@@ -53,16 +53,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($categories as $category)
+                            @foreach($tags as $tag)
                                 <tr>
-                                    <td>{{$category->id}}</td>
-                                    <td>{{$category->title}}</td>
-                                    <td>{{$category->created_at}}</td>
-                                    <td>{{$category->updated_at}}</td>
+                                    <td>{{$tag->id}}</td>
+                                    <td>{{$tag->title}}</td>
+                                    <td>{{$tag->created_at}}</td>
+                                    <td>{{$tag->updated_at}}</td>
                                     <td>
                                         <div class="row">
-                                            <a href="{{route('admin.categories.edit', $category->id)}}" class="btn btn-outline-dark mr-3">edit</a>
-                                            <form action="{{route('admin.categories.destroy', $category->id)}}" method="POST">
+                                            <a href="{{route('admin.tags.edit', $tag->id)}}" class="btn btn-outline-dark mr-3">edit</a>
+                                            <form action="{{route('admin.tags.destroy', $tag->id)}}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                                 <input type="submit" class="btn btn-outline-danger" value="delete">
