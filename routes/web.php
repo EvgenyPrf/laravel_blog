@@ -38,6 +38,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::patch('{id}', [\App\Http\Controllers\Admin\Tag\UpdateController::class, '__invoke'])->name('admin.tags.update');
         Route::delete('{id}', [\App\Http\Controllers\Admin\Tag\DestroyController::class, '__invoke'])->name('admin.tags.destroy');
     });
+
+    Route::group(['namespace' => 'Post','prefix'=>'posts'], function () {
+        Route::get('/', [\App\Http\Controllers\Admin\Post\IndexController::class, '__invoke'])->name('admin.posts.index');
+        Route::get('/create', [\App\Http\Controllers\Admin\Post\CreateController::class, '__invoke'])->name('admin.posts.create');
+        Route::post('/', [\App\Http\Controllers\Admin\Post\StoreController::class, '__invoke'])->name('admin.posts.store');
+        Route::get('{id}/edit', [\App\Http\Controllers\Admin\Post\EditController::class, '__invoke'])->name('admin.posts.edit');
+        Route::patch('{id}', [\App\Http\Controllers\Admin\Post\UpdateController::class, '__invoke'])->name('admin.posts.update');
+        Route::delete('{id}', [\App\Http\Controllers\Admin\Post\DestroyController::class, '__invoke'])->name('admin.posts.destroy');
+    });
 });
 
 Auth::routes();
