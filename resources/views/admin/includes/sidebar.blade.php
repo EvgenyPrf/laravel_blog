@@ -12,6 +12,14 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{route('admin.users.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-regular fa-users"></i>
+                    <p>
+                        Users
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{route('admin.categories.index')}}" class="nav-link">
                     <i class="nav-icon fas fa-regular fa-bookmark"></i>
                     <p>
