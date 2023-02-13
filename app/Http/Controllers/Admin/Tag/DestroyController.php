@@ -7,9 +7,9 @@ use App\Models\Tag;
 
 class DestroyController extends Controller
 {
-    public function __invoke($id)
+    public function __invoke(Tag $tag)
     {
-        Tag::find($id)->delete();
+        $tag->delete();
        return redirect()->route('admin.tags.index')->with(['success' => 'Tag was deleted!']);
     }
 }

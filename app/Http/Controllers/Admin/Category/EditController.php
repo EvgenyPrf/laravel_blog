@@ -8,9 +8,8 @@ use App\Models\Category;
 
 class EditController extends Controller
 {
-    public function __invoke($id)
+    public function __invoke(Category $category)
     {
-        $category = Category::find($id);
        return view('admin.categories.edit', compact('category'));
     }
 }

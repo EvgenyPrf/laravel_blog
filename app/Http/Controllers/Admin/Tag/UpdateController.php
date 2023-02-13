@@ -8,9 +8,8 @@ use App\Models\Tag;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, $id)
+    public function __invoke(UpdateRequest $request, Tag $tag)
     {
-        $tag = Tag::find($id);
         $tag->update($request->validated());
        return redirect()->route('admin.tags.index');
     }

@@ -25,7 +25,12 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'content' => 'required|string'
+            'content' => 'required|string',
+            'preview_image' => 'required|file',
+            'main_image' => 'required|file',
+            'category_id' => 'required|integer|exists:categories,id',
+            'tag_ids' => 'nullable|array',
+            'tag_ids.*' => 'integer|exists:tags,id',
         ];
     }
 
@@ -34,6 +39,9 @@ class StoreRequest extends FormRequest
         'title.required' => 'ЭЙ, а название где?',
         'title.string' => 'ТОЛЬКО СТРОКА!!!1111',
         'content.required' => 'Нужно добавить какой-то контент!',
+        'preview_image.required' => 'Нужно загрузить превью!',
+        'main_image.required' => 'Нужно загрузить картинку!',
+        'category_id.required' => 'Выберите категорию!',
     ];
     }
 }

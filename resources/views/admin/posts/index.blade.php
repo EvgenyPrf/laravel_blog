@@ -47,6 +47,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>title</th>
+                                <th>category</th>
                                 <th>created at</th>
                                 <th>updated at</th>
                                 <th>action</th>
@@ -57,6 +58,11 @@
                                 <tr>
                                     <td>{{$post->id}}</td>
                                     <td>{{$post->title}}</td>
+                                    @if(isset($post->category->title))
+                                    <td>{{$post->category->title}}</td>
+                                    @else
+                                        <td></td>
+                                    @endif
                                     <td>{{$post->created_at}}</td>
                                     <td>{{$post->updated_at}}</td>
                                     <td>

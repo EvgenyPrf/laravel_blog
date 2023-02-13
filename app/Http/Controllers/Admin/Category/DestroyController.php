@@ -7,9 +7,9 @@ use App\Models\Category;
 
 class DestroyController extends Controller
 {
-    public function __invoke($id)
+    public function __invoke(Category $category)
     {
-        Category::find($id)->delete();
+        $category->delete();
        return redirect()->route('admin.categories.index')->with(['success' => 'Category was deleted!']);
     }
 }

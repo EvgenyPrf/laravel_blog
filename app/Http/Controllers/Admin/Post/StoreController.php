@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Admin\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Post\StoreRequest;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
-class StoreController extends Controller
+class StoreController extends BaseController
 {
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        Post::firstOrCreate($data);
+        $this->service->store($data);
        return redirect()->route('admin.posts.index')->with(['success' => 'Post was added!']);
     }
 }

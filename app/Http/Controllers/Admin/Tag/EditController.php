@@ -7,9 +7,8 @@ use App\Models\Tag;
 
 class EditController extends Controller
 {
-    public function __invoke($id)
+    public function __invoke(Tag $tag)
     {
-        $tag = Tag::find($id);
        return view('admin.tags.edit', compact('tag'));
     }
 }
