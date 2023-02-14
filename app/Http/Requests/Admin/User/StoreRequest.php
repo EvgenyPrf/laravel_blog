@@ -27,6 +27,7 @@ class StoreRequest extends FormRequest
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|min:8',
+            'role' => 'required|integer',
 
         ];
     }
@@ -39,6 +40,7 @@ class StoreRequest extends FormRequest
         'email.unique' => 'Такой пользователь уже существует.',
         'password.required' => 'Придумайте пароль пользователя.',
         'password.min' => 'Пароль должен содержать минимум 8 символов.',
+        'role.required' => 'Выберите роль.',
 
     ];
     }

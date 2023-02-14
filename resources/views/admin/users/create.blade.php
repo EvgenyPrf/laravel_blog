@@ -38,6 +38,18 @@
                         @error('password')
                         <div class="text-danger mb-3">{{ $message }}</div>
                         @enderror
+                        <div class="form-group">
+                            <label>Role</label>
+                            <select name="role" class="form-control">
+                                <option selected disabled>Choose role</option>
+                                @foreach($roles as $id => $role)
+                                    <option value="{{$id}}" {{$id == old('role')?'selected':''}}>{{$role}}</option>
+                                @endforeach
+                            </select>
+                            @error('role')
+                            <div class="text-danger mb-3">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <input type="submit" value="Add" class="btn btn-outline-primary">
                     </form>
                 </div>
