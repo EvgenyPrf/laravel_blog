@@ -33,11 +33,6 @@
                         @error('email')
                         <div class="text-danger mb-3">{{ $message }}</div>
                         @enderror
-                        <label>Password</label>
-                        <input type="text" class="form-control mb-3" name="password" placeholder="password" value="{{old('password')}}">
-                        @error('password')
-                        <div class="text-danger mb-3">{{ $message }}</div>
-                        @enderror
                         <div class="form-group">
                             <label>Role</label>
                             <select name="role" class="form-control">
